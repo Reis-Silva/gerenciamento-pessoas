@@ -24,9 +24,4 @@ public class EnderecoValidator {
             throw new EnderecoException(AppConfiguration.messageSource().getMessage("endereco.mais.um.principal",null, Locale.getDefault()));
         }
     }
-
-    public static void enderecoExistenteValidar(Long id){
-        enderecoRepository.findById(id).orElseThrow(
-                () -> new EnderecoException(AppConfiguration.messageSource().getMessage("endereco.nao.encontrado",null,Locale.getDefault())));
-    }
 }

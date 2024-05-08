@@ -27,6 +27,7 @@ public class RestExceptionHandler {
 
     @ExceptionHandler({
             PessoaException.class,
+            EnderecoException.class
     })
     public ResponseEntity<ApiError> notFoundException(RuntimeException ex) {
         ApiError apiError = ApiError

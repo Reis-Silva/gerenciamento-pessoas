@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.trainning.gerenciamentopessoas.config.AppConfiguration;
 import org.trainning.gerenciamentopessoas.entity.Endereco;
 import org.trainning.gerenciamentopessoas.entity.Pessoa;
+import org.trainning.gerenciamentopessoas.exception.EnderecoException;
 import org.trainning.gerenciamentopessoas.exception.PessoaException;
 import org.trainning.gerenciamentopessoas.repository.EnderecoRepository;
 import org.trainning.gerenciamentopessoas.repository.PessoaRepository;
@@ -44,7 +45,7 @@ public class EnderecoServiceImpl implements EnderecoService {
 
     @Override
     public Endereco editar(Endereco endereco) {
-        EnderecoValidator.enderecoExistenteValidar(endereco.getId());
+        enderecoExistenteValidar(endereco.getId());
 
         List<Endereco> enderecosTemp = new ArrayList<>((Collection) enderecoRepository.findAllById(Collections.singleton(endereco.getIdPessoa())));
         enderecosTemp.remove(endereco);
@@ -57,8 +58,13 @@ public class EnderecoServiceImpl implements EnderecoService {
 
     @Override
     public void excluir(Long id) {
-        EnderecoValidator.enderecoExistenteValidar(id);
+        enderecoExistenteValidar(id);
 
         enderecoRepository.deleteById(id);
+    }
+
+    public void enderecoExistenteValidar(Long id){
+        enderecoRepository.findById(id).orElseThrow(
+                () -> new EnderecoException(AppConfiguration.messageSource().getMessage("endereco.nao.encontrado",null,Locale.getDefault())));
     }
 }

@@ -18,7 +18,14 @@
 
 ### OBS3: No link abaixo está disponibilizado a collection do postman para uso de dados mais diretos para o teste depois de instalado as imagens do docker:
 
-### Link arquivo .json(software postman e etc): https://1drv.ms/u/c/e8b76ac73dca6ab8/ETW7tXLEfvRJgo9le4pBJ-YBsUjPCW6xcIGlKuVXATKKQg?e=RS9NkK 
+#### Link arquivo .json(software postman e etc): https://1drv.ms/u/c/e8b76ac73dca6ab8/ETW7tXLEfvRJgo9le4pBJ-YBsUjPCW6xcIGlKuVXATKKQg?e=RS9NkK 
+### OBS4: Link da swagger depois de emulado no Docker, caso queira outro testador além do .json do postman: http://localhost:8280/swagger-ui/index.html
+
 
 # Link para o texto do teste completo e construido: 
 ## https://1drv.ms/b/c/e8b76ac73dca6ab8/ESNkb2LJCY5NjsXPy9AsPDIBOt_w4hn3OftJSNV2YPhZVw?e=5T7M6n
+
+# Link para o diagrama construído:
+
+## https://1drv.ms/i/c/e8b76ac73dca6ab8/EbY8TstnKG9Mvouv9573ctIB5X9FoY_B2witYy3B1blfPw?e=cH6OG6
+
